@@ -2,6 +2,7 @@ import cv2
 import mediapipe as mp
 import numpy as np
 import streamlit as st
+import tempfile
 
 # Load reference images for exercises
 reference_images = {
