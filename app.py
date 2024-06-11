@@ -1,8 +1,18 @@
+import streamlit as st
+import subprocess
+
+def get_installed_packages():
+    result = subprocess.run(['pip', 'list'], capture_output=True, text=True)
+    return result.stdout
+
+st.write("Installed Packages:")
+st.code(get_installed_packages())
+
 import cv2
 import mediapipe as mp
 import numpy as np
-import streamlit as st
 
+st.write("OpenCV Version:", cv2.__version__)
 # Load reference images for correct squat position
 reference_image_side_path = 'correct_squat_image.jpg'
 reference_image_front_path = 'squat_front.jpg'
