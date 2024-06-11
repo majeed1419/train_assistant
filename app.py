@@ -3,8 +3,7 @@ import cv2
 import mediapipe as mp
 import numpy as np
 
-st.write("OpenCV Version:", cv2.__version__)
-# Load reference images for correct squat position
+
 reference_image_side_path = 'correct_squat_image.jpg'
 reference_image_front_path = 'squat_front.jpg'
 reference_image_side = cv2.imread(reference_image_side_path)
