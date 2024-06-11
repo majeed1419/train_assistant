@@ -106,8 +106,9 @@ st.title("Squat Exercise Detection")
 st.write("Ensure your webcam is enabled and click the 'Start' button to begin detecting squat exercises.")
 
 # Display reference images for correct squat position
-st.image('squat_front.jpg', caption='Side View of Correct Squat Position')
-st.image('correct_squat_image.jpg', caption='Front View of Correct Squat Position')
+
+st.image('squat_front.jpg',caption='Front View of Correct Squat Position')
+st.image('correct_squat_image.jpg', caption='Side View of Correct Squat Position')
 
 # Button to start the squat detection
 if st.button('Start'):
