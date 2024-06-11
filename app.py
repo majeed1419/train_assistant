@@ -13,9 +13,10 @@ reference_images = {
 
 # Function to load and resize images
 def load_and_resize(image_path, size=(320, 240)):
-    image = cv2.imread(image_path)
+    image = cv2.imread(image_path, cv2.IMREAD_UNCHANGED)
     if image is not None:
-        image = cv2.resize(image, size)
+        # Resize the image with interpolation for better quality
+        image = cv2.resize(image, size, interpolation=cv2.INTER_CUBIC)
     return image
 
 # Load all reference images
@@ -130,23 +131,12 @@ def detect_exercise(exercise):
     # Release resources
     cap.release()
     cv2.destroyAllWindows()
-    pose.close()
 
 st.title("Exercise Detection")
 st.write("Ensure your webcam is enabled and select an exercise from the sidebar to begin detecting.")
 
 # Sidebar with exercise options
 exercise_option = st.sidebar.selectbox('Select an exercise:', ['Squat', 'Push Up', 'Lunge'])
-
-def load_and_resize(image_path, size=(320, 240)):
-    image = cv2.imread(image_path, cv2.IMREAD_UNCHANGED)
-    if image is not None:
-        # Resize the image with interpolation for better quality
-        image = cv2.resize(image, size, interpolation=cv2.INTER_CUBIC)
-    return image
-
-# Load all reference images
-loaded_images = {name: load_and_resize(path) for name, path in reference_images.items()}
 
 # Display reference images for the selected exercise
 if exercise_option in loaded_images:
@@ -156,10 +146,6 @@ if exercise_option in loaded_images:
     else:
         st.error(f"Failed to load the reference image for {exercise_option}. Path: {reference_images[exercise_option]}")
 
-
 # Button to start the exercise detection
 if st.button('Start'):
     detect_exercise(exercise_option)
-
-# Display analysis of the exercise
-# st.write(f"Total correct {exercise_option.lower()} attempts: {correct_attempts}")
