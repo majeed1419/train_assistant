@@ -2,7 +2,7 @@ import cv2
 import mediapipe as mp
 import numpy as np
 import streamlit as st
-import tempfile
+
 
 user_data = {
     'exercise': ['lunges', 'pushup', 'squats', 'plank'],
