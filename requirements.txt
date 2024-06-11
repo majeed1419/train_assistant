@@ -1,11 +1,3 @@
-mediapipe
-streamlit
-opencv-python-headless==4.7.0.72
 mediapipe==0.10.14
-tempfile
-opencv-contrib-python
-opencv-python
-numpy
-torch
-torchvision
-Pillow
+streamlit==1.35.0
+opencv-python-headless==4.7.0.72
