@@ -3,7 +3,6 @@ import mediapipe as mp
 import numpy as np
 import streamlit as st
 
-
 user_data = {
     'exercise': ['lunges', 'pushup', 'squats', 'plank'],
     'correct_count': [0,0,0,0],
@@ -144,7 +143,6 @@ def detect_exercise(exercise):
 
     # Release resources
     cap.release()
-    cv2.destroyAllWindows()
 
 st.title("Exercise Detection")
 st.write("Ensure your webcam is enabled and select an exercise from the sidebar to begin detecting.")
