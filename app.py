@@ -1,13 +1,4 @@
 import streamlit as st
-import subprocess
-
-def get_installed_packages():
-    result = subprocess.run(['pip', 'list'], capture_output=True, text=True)
-    return result.stdout
-
-st.write("Installed Packages:")
-st.code(get_installed_packages())
-
 import cv2
 import mediapipe as mp
 import numpy as np
