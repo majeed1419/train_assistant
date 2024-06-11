@@ -2,3 +2,12 @@ opencv-python
 mediapipe
 numpy
 streamlit
+distlib==0.3.8
+filelock==3.14.0
+pip==24.0
+platformdirs==4.2.2
+setuptools==65.5.1
+supervisor==4.2.5
+uv==0.1.42
+virtualenv==20.26.2
+wheel==0.43.0
